@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import banner from '@/public/banner.jpg';
-import perfil from '@/public/imagen1.jpg';
+import banner from '@/components/images/banner.jpg';
+import perfil from '@/components/images/imagen1.jpg';
 import { useState } from 'react';
 import ButtonPrevious from '@/components/ui/ButtonPrevious';
 import ButtonNext from '@/components/ui/ButtonNext';
