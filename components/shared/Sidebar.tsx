@@ -5,22 +5,21 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { route } from '@/assets/data';
+import { information } from '@/assets/data';
+import Image from 'next/image';
 const Sidebar = () => {
   const [nav, setNav] = useState(false);
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 top-0 left-0 z-50 text-black bg-white fixed nav">
-      <div>
-        <h1 className="text-5xl font-signature ml-2">
-          <a
-            className="link-underline link-underline-black"
-            href=""
-            target="_blank"
-            rel="noreferrer"
-          >
-            Logo
-          </a>
-        </h1>
+    <div className="flex justify-between items-center w-full h-24 px-4 top-0 left-0 z-50 text-black bg-white fixed nav">
+      <div className="relative w-20 h-20">
+        <Image
+          src={information.photo.logo}
+          alt="imagen-perfil"
+          fill
+          className="object-cover rounded-full border "
+          sizes="max-width: 600px"
+        />
       </div>
 
       <section className="hidden md:flex">

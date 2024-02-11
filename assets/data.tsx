@@ -4,7 +4,7 @@ import cuellos from '@/components/images/cuellos.jpg';
 import hilos from '@/components/images/hilos.jpg';
 import cinta from '@/components/images/cinta.jpg';
 import bobinas from '@/components/images/bobinas.jpg';
-
+import logo from '@/components/images/logo.jpg';
 export const route = [
   {
     label: 'Home',
@@ -39,21 +39,21 @@ export const information = {
       id: 1,
       image: laser,
       category: 'Maquinas',
-      title: 'Maquinas de Laser',
+      title: 'Maquina de Laser',
       description: 'Descripción de las máquinas.',
     },
     {
       id: 2,
       image: bordadora,
       category: 'Maquinas',
-      title: 'Maquinas de Bordar',
+      title: 'Maquina de Bordar',
       description: 'Descripción de las máquinas ',
     },
     {
       id: 3,
       image: cuellos,
       category: 'Maquinas',
-      title: 'Maquinas de Tejidos',
+      title: 'Maquina Tejedora',
       description: 'Descripción de las máquina.',
     },
   ],
@@ -67,18 +67,20 @@ export const information = {
       price: '$1980',
     },
     {
-      id: 1,
+      id: 2,
       image: cinta,
       category: 'Cinta ',
       title: 'Cinta doble Contacto - 25mm - 40mts.',
       price: '$1980',
     },
     {
-      id: 1,
+      id: 3,
       image: bobinas,
-      category: 'Bobina ',
+      category: 'Hilos',
       title: 'Hilo Bordar Bobina - 30.000mts',
       price: '$1990',
     },
   ],
+
+  photo: { logo },
 };
