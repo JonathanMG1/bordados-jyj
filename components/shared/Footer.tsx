@@ -57,12 +57,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
-                    Bordados
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Laser
+                    Cintas
                   </a>
                 </li>
               </ul>

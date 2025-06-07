@@ -1,6 +1,5 @@
 'use client';
 import MainMenu from '@/components/shared/MainMenu';
-import { cn } from '@/libs/utils';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -11,7 +10,10 @@ const Sidebar = () => {
   const [nav, setNav] = useState(false);
 
   return (
-    <div className="flex justify-between items-center w-full h-24 px-4 top-0 left-0 z-50 text-black bg-white fixed nav">
+    <div
+      className="flex justify-between items-center w-full h-24 px-4 top-0 left-0 z-50 text-white dark:bg-gray-900 fixed nav shadow backdrop:blur-md 
+    "
+    >
       <div className="relative w-20 h-20">
         <Image
           src={information.photo.logo}

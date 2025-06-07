@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import Sidebar from '@/components/shared/Sidebar';
 import Footer from '@/components/shared/Footer';
 

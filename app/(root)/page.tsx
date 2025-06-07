@@ -4,7 +4,7 @@ import SectionService from './sections/section-services';
 
 export default function Home() {
   return (
-    <div className="relative z-10">
+    <div className="relative z-10 py-3">
       <SectionImage />
       <SectionCategory />
       <SectionService />

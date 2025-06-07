@@ -1,10 +1,16 @@
 import laser from '@/components/images/maquinalaser.jpg';
 import bordadora from '@/components/images/maquinabordar.jpg';
-import cuellos from '@/components/images/cuellos.jpg';
 import hilos from '@/components/images/hilos.jpg';
 import cinta from '@/components/images/cinta.jpg';
 import bobinas from '@/components/images/bobinas.jpg';
 import logo from '@/components/images/logo.jpg';
+import piquemc from '@/components/images/pique_mc.jpg';
+import piqueml from '@/components/images/pique_ml.jpg';
+import polarhombre from '@/components/images/polarhombre.jpg';
+import polarmujer from '@/components/images/polarmujer.jpg';
+import polera from '@/components/images/polera.jpg';
+import hilodurafil from '@/components/images/hilosdurafil.jpg';
+
 export const route = [
   {
     label: 'Home',
@@ -31,6 +37,11 @@ export const route = [
     // icon: RiHome3Line,
     href: '/contact',
   },
+  {
+    label: 'Cotizar',
+    // icon: RiHome3Line,
+    href: '/cotizar',
+  },
 ];
 
 export const information = {
@@ -49,36 +60,83 @@ export const information = {
       title: 'Maquina de Bordar',
       description: 'Descripción de las máquinas ',
     },
+  ],
+
+  categorias: [
+    {
+      id: 1,
+      image: hilos,
+      category: 'Hilos',
+      title: 'Hilos de Bordar - Lumina - 4000 mts.',
+    },
+    {
+      id: 2,
+      image: cinta,
+      category: 'Accesorios',
+      title: 'Cinta doble Contacto - 25mm - 40mts.',
+    },
     {
       id: 3,
-      image: cuellos,
-      category: 'Maquinas',
-      title: 'Maquina Tejedora',
-      description: 'Descripción de las máquina.',
+      image: polera,
+      category: 'Ropas',
+      title: 'Polera Pique 60% Algodón Manga Corta Hombre',
     },
   ],
 
   productos: [
     {
       id: 1,
-      image: hilos,
-      category: 'Hilos',
-      title: 'Hilos de Bordar - Lumina - 4000 mts.',
-      price: '$1980',
+      image: piquemc,
+      category: 'Ropas',
+      title: 'Polera Pique 60% Algodón Manga Corta Hombre',
     },
     {
       id: 2,
-      image: cinta,
-      category: 'Cinta ',
-      title: 'Cinta doble Contacto - 25mm - 40mts.',
-      price: '$1980',
+      image: piqueml,
+      category: 'Ropas',
+      title: 'Polera Pique 60% Algodón Manga Larga Hombre',
     },
     {
       id: 3,
-      image: bobinas,
+      image: polarhombre,
+      category: 'Ropas',
+      title: 'Micropolar Termico Manga Larga Hombre',
+    },
+    {
+      id: 4,
+      image: polarmujer,
+      category: 'Ropas',
+      title: 'Micropolar Termico Manga Larga Mujer',
+    },
+    {
+      id: 5,
+      image: polera,
+      category: 'Ropas',
+      title: 'Polera 100% Algodon Manga Corta Hombre',
+    },
+    {
+      id: 6,
+      image: hilodurafil,
       category: 'Hilos',
-      title: 'Hilo Bordar Bobina - 30.000mts',
-      price: '$1990',
+      title: 'Hilo de bordar Lumina 4000mts.',
+    },
+    {
+      id: 7,
+      image: hilos,
+      category: 'Hilos',
+      title: 'Hilo de bordar Lumina 4000mts.',
+    },
+    {
+      id: 8,
+      image: cinta,
+      category: 'Accesorios',
+      title: 'Cinta doble Contacto - 25mm - 40mts.',
+    },
+    {
+      id: 9,
+      image: bobinas,
+      category: 'Accesorios',
+      title: 'Hilo para Bobina 30.000 yardas.',
     },
   ],
 

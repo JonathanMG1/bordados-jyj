@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import banner from '@/components/images/banner.jpg';
 import perfil from '@/components/images/imagen1.jpg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ButtonPrevious from '@/components/ui/ButtonPrevious';
 import ButtonNext from '@/components/ui/ButtonNext';
 
@@ -23,9 +23,20 @@ const SectionImage = () => {
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  });
   return (
-    <div className="relative w-full translate-y-24">
-      <div className="">
+    <div className="relative w-full  overflow-hidden translate-y-24 ">
+      <div
+        className=" transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${activeIndex * 0.3}%)` }}
+      >
         {images.map((image, index) => (
           <div
             key={index}

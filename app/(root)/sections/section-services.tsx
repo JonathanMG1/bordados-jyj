@@ -6,7 +6,7 @@ const SectionService = () => {
   return (
     <section className="py-16 px-10">
       <h5 className="mb-2 text-2xl tracking-tight text-black translate-y-9 py-6">
-        Servicios de Bordados J&J
+        Servicios
       </h5>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 py-11 place-items-center">
         {information.machines.map((machine) => (
