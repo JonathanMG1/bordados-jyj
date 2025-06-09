@@ -12,7 +12,7 @@ const ContactPage = () => {
               Nombre
             </label>
             <input
-              type="email"
+              type="text"
               id="email"
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5    "
               placeholder="Nombre"
@@ -24,7 +24,7 @@ const ContactPage = () => {
               Correo
             </label>
             <input
-              type="text"
+              type="email"
               id="subject"
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5    "
               placeholder="correo@hotmail.com"

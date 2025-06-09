@@ -10,6 +10,7 @@ import polarhombre from '@/components/images/polarhombre.jpg';
 import polarmujer from '@/components/images/polarmujer.jpg';
 import polera from '@/components/images/polera.jpg';
 import hilodurafil from '@/components/images/hilosdurafil.jpg';
+import { MdOutlineShoppingCart } from 'react-icons/md';
 
 export const route = [
   {
@@ -39,7 +40,6 @@ export const route = [
   },
   {
     label: 'Cotizar',
-    // icon: RiHome3Line,
     href: '/cotizar',
   },
 ];

@@ -23,7 +23,7 @@ const ServicePage = () => {
                   {machine.title}
                 </h1>
               </div>
-              <p className="mt-6 mb-10 text-base leading-7 text-gray-500">
+              <p className="mt-6 mb-10 text-base leading-7 text-gray-700">
                 {machine.description}
               </p>
             </div>

@@ -3,14 +3,21 @@
 import { information } from '@/assets/data';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useCart } from '@/components/ui/CartContext'; // Ajusta la ruta según tu estructura
 
 const categorias = ['Hilos', 'Accesorios', 'Ropas'];
 
 const ProductPage = () => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
+  const { addToCart } = useCart();
   const productosFiltrados = categoriaSeleccionada
     ? information.productos.filter((p) => p.category === categoriaSeleccionada)
     : information.productos;
+
+  const handleAddToCart = (productId: number): void => {
+    addToCart(productId);
+    console.log(`Producto agregado al carrito: ID ${productId}`);
+  };
   return (
     <div className=" flex flex-col lg:flex-row max-w-7xl mx-auto px-4 py-28">
       <aside className="w-full lg:w-1/5 mb-8 lg:mb-0 ">
@@ -66,12 +73,12 @@ const ProductPage = () => {
                   {producto.title}
                 </h5>
                 <div className="flex items-center justify-between mt-auto">
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => handleAddToCart(producto.id)}
                     className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                   >
                     Agregar al carrito
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

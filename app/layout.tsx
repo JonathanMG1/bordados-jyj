@@ -3,6 +3,7 @@ import { Outfit } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
 import { cn } from '@/libs/utils';
+import { CartProvider } from '@/components/ui/CartContext';
 
 const font = Outfit({ subsets: ['latin'] });
 
@@ -14,9 +15,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={cn('bg-dark text-gray-300', font.className)}>
-        <main>{children}</main>
-      </body>
+      <CartProvider>
+        <body className={cn('bg-dark ', font.className)}>
+          <main>{children}</main>
+        </body>
+      </CartProvider>
     </html>
   );
 }

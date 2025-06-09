@@ -2,13 +2,28 @@
 import MainMenu from '@/components/shared/MainMenu';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { route } from '@/assets/data';
 import { information } from '@/assets/data';
 import Image from 'next/image';
-const Sidebar = () => {
-  const [nav, setNav] = useState(false);
+import { useCart } from '@/components/ui/CartContext'; // Ajusta la ruta según tu estructura
 
+const Sidebar = (): JSX.Element => {
+  const [nav, setNav] = useState<boolean>(false);
+  const { getTotalItems, getDisplayCount } = useCart();
+  const cartCount: number = getTotalItems();
+  const displayCount: string = getDisplayCount();
+
+  const CartIcon = (): JSX.Element => (
+    <div className="relative -left-3 ">
+      <FaShoppingCart className="text-gray-400 transition-colors  " size={20} />
+      {cartCount > 0 && (
+        <span className="absolute -top-2 -right-2 bg-[#186194] text-white text-xs w-4 h-4 rounded-full flex items-center justify-center ">
+          {displayCount}
+        </span>
+      )}
+    </div>
+  );
   return (
     <div
       className="flex justify-between items-center w-full h-24 px-4 top-0 left-0 z-50 text-white dark:bg-gray-900 fixed nav shadow backdrop:blur-md 
@@ -26,6 +41,7 @@ const Sidebar = () => {
 
       <section className="hidden md:flex">
         <MainMenu />
+        <CartIcon />
       </section>
 
       <aside
@@ -36,18 +52,36 @@ const Sidebar = () => {
       </aside>
 
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500 ">
-          {route.map(({ label, href }) => (
-            <li
-              key={href}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl hover:text-blue-500"
-            >
-              <Link onClick={() => setNav(!nav)} href={href}>
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
+          {/* Menu Items */}
+          <ul className="flex flex-col justify-center items-center flex-1">
+            {route.map(({ label, href }) => (
+              <li
+                key={href}
+                className="px-4 cursor-pointer capitalize py-6 text-4xl hover:text-blue-500"
+              >
+                <Link onClick={() => setNav(!nav)} href={href}>
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mb-20  ">
+            <div className=" relative flex items-center gap-3 text-4xl hover:text-blue-500 cursor-pointer -right-[70px]  -top-16">
+              <FaShoppingCart
+                className="text-gray-400 transition-colors  "
+                size={20}
+              />
+
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-[#186194] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  {displayCount}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
