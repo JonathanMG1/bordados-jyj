@@ -10,7 +10,6 @@ import polarhombre from '@/components/images/polarhombre.jpg';
 import polarmujer from '@/components/images/polarmujer.jpg';
 import polera from '@/components/images/polera.jpg';
 import hilodurafil from '@/components/images/hilosdurafil.jpg';
-import { MdOutlineShoppingCart } from 'react-icons/md';
 
 export const route = [
   {

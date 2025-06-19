@@ -2,11 +2,14 @@
 
 import Image from 'next/image';
 import { useCart } from '@/components/ui/CartContext';
+import { useState } from 'react';
+import FormularioCotizar from './components/FormularioCotizar';
 
 const CotizarPage = () => {
   const { getCartProducts, cartItems, getTotalItems } = useCart();
   const productosEnCarrito = getCartProducts();
   const totalProductos = getTotalItems();
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
   return (
     <section className="bg-white  antialiased md:py-16 ">
@@ -29,7 +32,6 @@ const CotizarPage = () => {
                       <Image
                         src={producto.image}
                         alt={producto.title}
-                        fill
                         className="text-base font-medium text-black hover:underline"
                       />
                     </div>
@@ -97,13 +99,21 @@ const CotizarPage = () => {
                   </p>
                 )}
               </div>
-
-              <a
-                href="#"
-                className="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              >
-                Proceder a cotizar
-              </a>
+              {productosEnCarrito.length > 0 && (
+                <button
+                  onClick={() => setMostrarFormulario(!mostrarFormulario)}
+                  className="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  {mostrarFormulario
+                    ? 'Ocultar formulario'
+                    : 'Proceder a cotizar'}
+                </button>
+              )}
+              {mostrarFormulario && (
+                <div className="mt-4">
+                  <FormularioCotizar />
+                </div>
+              )}
 
               <div className="flex items-center justify-center gap-2">
                 <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -111,7 +121,7 @@ const CotizarPage = () => {
                   o{' '}
                 </span>
                 <a
-                  href="#"
+                  href="/products"
                   title=""
                   className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500"
                 >

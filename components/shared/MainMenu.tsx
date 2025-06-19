@@ -3,8 +3,6 @@ import { cn } from '@/libs/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { route } from '@/assets/data';
-import { FaShoppingCart } from 'react-icons/fa';
-import { useState } from 'react';
 
 const MainMenu = () => {
   const pathname = usePathname();

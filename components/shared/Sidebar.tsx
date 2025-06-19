@@ -67,8 +67,8 @@ const Sidebar = (): JSX.Element => {
             ))}
           </ul>
 
-          <div className="mb-20  ">
-            <div className=" relative flex items-center gap-3 text-4xl hover:text-blue-500 cursor-pointer -right-[70px]  -top-16">
+          <div className="">
+            <div className=" relative flex items-center gap-3 text-4xl hover:text-blue-500 cursor-pointer -right-[70px]  -top-40">
               <FaShoppingCart
                 className="text-gray-400 transition-colors  "
                 size={20}

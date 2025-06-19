@@ -8,7 +8,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Sidebar />
-      {children}
+      <div className="ml-2 mb-10 p-14">{children}</div>
       <Footer />
     </>
   );
